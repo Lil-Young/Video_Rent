@@ -39,11 +39,9 @@ int main(void) {
 	rent_open(r_tail);
 	while (1) {
 		printf("사용자: 1, 관리자: 2 :");
+		int select = 0;
 		scanf("%d", &select);
-		while (getchar() != '\n') {
-			printf("문자(열)을 입력했습니다. 프로그램을 다시 실행하고 1, 2 중에 하나를 고르세요\n");
-			return 0;
-		}
+		while (getchar() != '\n');
 		if (select == 1) {
 			while (1) {
 				printf("사용자 모드를 선택해주세요 : ");
@@ -134,6 +132,9 @@ int main(void) {
 
 				}
 			}
+		}
+		else {
+			printf("다시입력해주세요\n");
 		}
 	}
 }
