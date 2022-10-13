@@ -1,24 +1,25 @@
-﻿  main.c
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(37,11): warning C4013: 'user_open'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(38,12): warning C4013: 'video_open'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(39,11): warning C4013: 'rent_open'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(58,17): warning C4013: 'rent_insert'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(61,16): warning C4013: 'video_show'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(64,21): warning C4013: 'return_complete'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(67,16): warning C4013: 'video_find'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(88,17): warning C4013: 'user_insert'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(91,18): warning C4013: 'video_insert'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(94,15): warning C4013: 'user_show'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(100,15): warning C4013: 'rent_show'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(103,18): warning C4013: 'delayed_date'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(106,14): warning C4013: 'user_del'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(109,15): warning C4013: 'video_del'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(112,15): warning C4013: 'user_find'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(118,15): warning C4013: 'rent_find'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(121,15): warning C4013: 'id_update'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(124,18): warning C4013: 'stock_update'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(127,19): warning C4013: 'return_update'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(43,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(48,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\main.c(78,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  insert.c
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(17,12): warning C4098: 'user_insert': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(30,12): warning C4013: 'user_store'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(12,31): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(26,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(43,12): warning C4098: 'video_insert': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(60,13): warning C4013: 'video_store'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(38,32): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(47,22): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(56,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(79,11): warning C4098: 'rent_insert': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(86,12): warning C4098: 'rent_insert': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(95,13): warning C4098: 'rent_insert': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(106,11): warning C4098: 'rent_insert': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(121,12): warning C4013: 'rent_store'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(68,50): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(81,73): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(108,28): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(117,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(128,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'rent *'입니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(128,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) rent *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(130,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'rent *'입니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(130,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) rent *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\비디오대여\insert.c(134,14): warning C4013: 'return_store'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   비디오대여.vcxproj -> C:\Users\송용인\Documents\GitHub\Video_Rent\비디오대여\x64\Debug\비디오대여.exe

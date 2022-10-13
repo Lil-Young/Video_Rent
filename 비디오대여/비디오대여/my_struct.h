@@ -1,4 +1,5 @@
 #pragma once
+//사용할 구조체
 typedef struct User {
 	char* user_id;
 	char* user_name;
