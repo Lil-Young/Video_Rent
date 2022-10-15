@@ -12,8 +12,8 @@ void user_open(user* u_tail) {
 	FILE* fp = NULL;
 
 	//변수 선언
-	char id[10]; 
-	char name[10];
+	char id[1000];
+	char name[1000];
 
 	int is_eof = 0; //변수 선언 및 초기화
 
@@ -63,7 +63,7 @@ void video_open(video* v_tail) {
 	FILE* fp = NULL;
 
 	//변수 선언
-	char title[30]; 
+	char title[1000];
 	int stock;
 
 	int is_eof = 0; //변수 선언 및 초기화
@@ -88,7 +88,7 @@ void video_open(video* v_tail) {
 		}
 
 		//newNode, newNode->video_title 메모리 할당
-		newNode = (user*)malloc(sizeof(user));
+		newNode = (video*)malloc(sizeof(video));
 		newNode->video_title = (char*)malloc(sizeof(char) * strlen(title) + 1);
 
 		strcpy(newNode->video_title, title); //strcpy로 title에 있는 문자열을 newNode->video_title로 복사
@@ -113,10 +113,10 @@ void rent_open(rent* r_tail) {
 	FILE* fp = NULL;
 
 	//변수 선언
-	char title[30];	
-	char id[10]; 
-	char rent_d[10]; 
-	char return_d[10];
+	char title[1000];
+	char id[1000];
+	char rent_d[1000];
+	char return_d[1000];
 
 	int is_eof = 0; //변수 선언 및 초기화
 
@@ -171,10 +171,10 @@ void return_open(rent* return_tail) {
 	FILE* fp = NULL;
 
 	//변수 선언
-	char title[30];	
-	char id[10]; 
-	char rent_d[10]; 
-	char return_d[10];
+	char title[1000];
+	char id[1000];
+	char rent_d[1000];
+	char return_d[1000];
 
 	int is_eof = 0; //변수 선언 및 초기화
 

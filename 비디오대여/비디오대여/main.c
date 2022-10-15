@@ -16,7 +16,6 @@ int main(void) {
 	video* v_head = NULL; video* v_tail = NULL;
 	rent* r_head = NULL; rent* r_tail = NULL;
 	rent* return_head = NULL; rent* return_tail = NULL;
-	rent* pointer_val;
 
 	//head, tail 메모리할당
 	u_head = (user*)malloc(sizeof(user)); u_tail = (user*)malloc(sizeof(user));
@@ -50,13 +49,16 @@ int main(void) {
 
 	//모드 선택 및 기능 선택
 	while (1) {
-		printf("사용하고싶은 모드를 선택해주세요.\n");
-		printf("사용자 모드: 1, 관리자 모드: 2 :");
-		int select = 0;
+		printf("사용자 모드를 선택해주세요.\n");
+		printf("회원 모드: 1, 관리자 모드: 2, 종료: 3 :");
 		scanf("%d", &select);
+		if (select == 3) {
+			printf("프로그램을 종료합니다.");
+			return 0;
+		}
 		while (getchar() != '\n');
 		if (select == 1) {
-			printf("사용자 모드를 실행합니다.\n");
+			printf("회원 모드를 실행합니다.\n");
 			printf("기능 -> 0: 뒤로가기. 1: 비디오를 대여합니다. 2: 대여 가능한 비디오를 보여줍니다. 3: 비디오를 반납합니다. 4: 비디오를 검색합니다.\n");
 			while (1) {
 				printf("수행할 기능을 입력해주세요: ");
@@ -70,12 +72,10 @@ int main(void) {
 					rent_insert(r_tail, v_head, u_head, r_head); //rent_insert 함수를 호출하고 인자들을 전달한다.
 					break;
 				case 2:
-					user_video_show(v_head); //video_show 함수를 호출하고 인자들을 전달한다.
+					user_video_show(v_head); //user_video_show 함수를 호출하고 인자들을 전달한다.
 					break;
 				case 3:
-					pointer_val = return_complete(r_head, v_head, u_head); //return_complete 함수를 호출하고 인자들을 전달한다.
-					printf("p의 주소값 : %s\n", pointer_val->user_id);
-					return_insert(return_tail, return_head, pointer_val);
+					return_complete(r_head, v_head, u_head, return_tail, return_head); //return_complete 함수를 호출하고 인자들을 전달한다.
 					break;
 				case 4:
 					video_find(v_head); //video_find 함수를 호출하고 인자들을 전달한다.
@@ -87,7 +87,7 @@ int main(void) {
 		}
 		else if (select == 2) {
 			printf("관리자 모드를 실행합니다.\n");
-			printf("기능 -> 0: 뒤로가기. 1: 가입자를 추가합니다. 2: 비디오를 추가합니다. 3: 가입자를 보여줍니다. 4: 모든 비디오를 보여줍니다. 5: 대여한 가입자의 정보를 보여줍니다. 6: 비디오의 반납날짜가 지난 가입자의 정보를 보여줍니다. 7: 가입자를 삭제합니다. 8: 비디오를 삭제합니다. 9: 가입자를 검색합니다. 10: 비디오를 검색합니다. 11: 대여한 가입자의 정보를 보여줍니다. 12: 가입자의 id를 업데이트 합니다. 13: 비디오의 재고를 업데이트 합니다. 14: 반납날짜를 업데이트합니다. 15: 가입자의 모든 정보를 초기화합니다. 16: 비디오의 모든 정보를 초기화합니다. 17: 대여한 가입자의 정보를 초기화합니다.\n");
+			printf("기능 -> 0: 뒤로가기. 1: 가입자를 추가합니다. 2: 비디오를 추가합니다. 3: 가입자를 보여줍니다. 4: 모든 비디오를 보여줍니다. 5: 대여한 가입자의 정보를 보여줍니다. 6: 비디오의 반납날짜가 지난 가입자의 정보를 보여줍니다. 7: 가입자를 삭제합니다. 8: 비디오를 삭제합니다. 9: 가입자를 검색합니다. 10: 비디오를 검색합니다. 11: 대여한 가입자의 정보를 보여줍니다. 12: 가입자의 id를 업데이트 합니다. 13: 비디오의 재고를 업데이트 합니다. 14: 반납날짜를 업데이트합니다. 15: 가입자의 모든 정보를 초기화합니다. 16: 비디오의 모든 정보를 초기화합니다. 17: 대여한 가입자의 정보를 초기화합니다. 18: 반납정보를 보여줍니다.\n");
 			while (1) {
 				printf("수행할 기능을 입력해주세요: ");
 				scanf("%d", &func);
@@ -106,7 +106,7 @@ int main(void) {
 					user_show(u_head); //user_show 함수를 호출하고 인자들을 전달한다.
 					break;
 				case 4:
-					all_video_show(v_head); //video_show 함수를 호출하고 인자들을 전달한다.
+					all_video_show(v_head); //all_video_show 함수를 호출하고 인자들을 전달한다.
 					break;
 				case 5:
 					rent_show(r_head); //rent_show 함수를 호출하고 인자들을 전달한다.
@@ -145,7 +145,10 @@ int main(void) {
 					video_all_del(v_head); //video_all_del 함수를 호출하고 인자들을 전달한다.
 					break;
 				case 17:
-					rent_all_del(r_head); //rent_all_del 함수를 호출하고 인자들을 전달한다.
+					rent_return_all_del(r_head, return_head); //rent_return_all_del 함수를 호출하고 인자들을 전달한다.
+					break;
+				case 18:
+					return_show(return_head); //return_show 함수를 호출하고 인자들을 전달한다.
 					break;
 				default :
 					printf("잘못 입력했습니다. 기능을 다시입력하세요.\n");

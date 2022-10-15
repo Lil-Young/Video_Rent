@@ -16,10 +16,10 @@ void id_update(user* u_head, rent* r_head) {
 	r_p = r_head->next;
 
 	//변수 선언
-	char id[10]; 
-	char update_id[10];
+	char id[1000];
+	char update_id[1000];
 
-	printf("가입자의 id를 업데이트합니다.\n");
+	printf("회원의 id를 업데이트합니다.\n");
 	printf("본인의 id를 입력해주세요: "); 
 	scanf("%s", id);
 
@@ -74,7 +74,7 @@ void stock_update(video* v_head) {
 	p = v_head->next;
 
 	//변수 선언
-	char title[30]; 
+	char title[1000];
 	int update_stock; 
 	int temp;
 
@@ -117,30 +117,30 @@ void return_update(rent* r_head) {
 
 	//변수 선언
 	int cnt = 0; 
-	char id[10]; 
-	char title[30]; 
-	char update_return[10];
+	char id[1000];
+	char title[1000];
+	char update_return[1000];
 
 	printf("반납날짜를 업데이트합니다.\n");
-	printf("대여한 가입자의 id를 입력해주세요: "); 
+	printf("대여한 회원의 id를 입력해주세요: "); 
 	scanf("%s", id);
 
 	//입력한 id가 빌린 비디오 제목외 나머지 정보들을 보여주는 과정
 	while (p->next != NULL) {
 		if (strcmp(p->user_id, id) == 0) {
 			cnt++;
-			printf("가입자 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
+			printf("회원 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
 				, p->user_id, p->video_title, p->rent_date, p->return_date);
 		}
 		p = p->next;
 	}
 	if (cnt == 0) {
-		printf("대여한 가입자의 id가 존재하지 않습니다. 다시 시도해주세요.\n");
+		printf("대여한 회원의 id가 존재하지 않습니다. 다시 시도해주세요.\n");
 		return 0;
 	}
 
 	p = r_head->next;
-	printf("수정하고싶은 비디오 제목을 입력해주세요: "); 
+	printf("수정하고싶은 반납날짜의 비디오 제목을 입력해주세요: "); 
 	scanf("%s", title);
 
 	//입력한 title이 있는지 확인하는 과정

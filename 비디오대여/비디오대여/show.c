@@ -51,16 +51,16 @@ void user_show(user* u_head) {
 	//포인터변수 선언 및 초기화
 	user* p = NULL; 
 	p = u_head->next;
-	printf("가입자를 보여줍니다.\n");
+	printf("회원을 보여줍니다.\n");
 	if (p->next == NULL) {
-		printf("가입자가 존재하지 않습니다. 다시 시도해주세요.\n");
+		printf("회원이 존재하지 않습니다. 다시 시도해주세요.\n");
 		return 0;
 	}
-	printf("*** 가입자 목록입니다. ***\n");
+	printf("*** 회원 목록입니다. ***\n");
 
-	//가입자(들)를 보여주는 과정
+	//회원(들)을 보여주는 과정
 	while (p->next != NULL) {
-		printf("가입자 이름: %s, 가입자 id: %s\n", p->user_name, p->user_id);
+		printf("회원 이름: %s, 회원 id: %s\n", p->user_name, p->user_id);
 		p = p->next;
 	}
 }
@@ -72,16 +72,16 @@ void rent_show(rent* r_head) {
 	rent* p = NULL;
 	p = r_head->next;
 
-	printf("비디오를 대여한 가입자의 정보를 보여줍니다.\n");
+	printf("비디오를 대여한 회원의 정보를 보여줍니다.\n");
 	if (p->next == NULL) {
-		printf("비디오를 대여한 가입자가 존재하지 않습니다. 다시 시도해주세요.\n");
+		printf("비디오를 대여한 회원이 존재하지 않습니다. 다시 시도해주세요.\n");
 		return 0;
 	}
-	printf("*** 비디오를 대여한 가입자 id와 비디오 목록입니다. ***\n");
+	printf("*** 비디오를 대여한 회원 id와 비디오 목록입니다. ***\n");
 
-	//비디오를 대여한 가입자(들)를 보여주는 과정
+	//비디오를 대여한 회원(들)을 보여주는 과정
 	while (p->next != NULL) {
-		printf("가입자 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
+		printf("회원 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
 			, p->user_id, p->video_title, p->rent_date, p->return_date);
 		p = p->next;
 	}
@@ -95,29 +95,29 @@ void delayed_date(rent* r_head) {
 	p = r_head->next;
 
 	//변수 선언
-	char date[10];
+	char date[1000];
 	int cnt = 0;
 
-	printf("반납날짜가 지난 가입자의 정보를 보여줍니다.\n");
+	printf("반납날짜가 지난 회원의 정보를 보여줍니다.\n");
 	if (p->next == NULL) {
-		printf("비디오를 대여한 가입자가 존재하지 않습니다. 다시 시도해주세요.\n");
+		printf("비디오를 대여한 회원이 존재하지 않습니다. 다시 시도해주세요.\n");
 		return 0;
 	}
-	printf("*** 반납날짜가 지난 가입자 id와 비디오 목록입니다 ***.\n");
-	printf("오늘 날짜를 입력해주세요: "); scanf("%s", date);
+	printf("*** 반납날짜가 지난 회원 id와 비디오 목록입니다 ***.\n");
+	printf("오늘 날짜를 입력해주세요: "); 
+	scanf("%s", date);
 
-	//입력한 date보다 높은(반납날짜가지난) 가입자(들)를 보여주는 과정
+	//입력한 date보다 높은(반납날짜가지난) 회원(들)을 보여주는 과정
 	while (p->next != NULL) {
 		if (strcmp(p->return_date, date) < 0) {
 			cnt++;
-			printf("가입자 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
+			printf("회원 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
 				, p->user_id, p->video_title, p->rent_date, p->return_date);
 		}
 		p = p->next;
 	}
 	if (cnt == 0) {
-		printf("반납날짜가 지난 가입자가 존재하지 않습니다. 다시 시도해주세요.\n");
-		return 0;
+		printf("반납날짜가 지난 회원이 존재하지 않습니다. 다시 시도해주세요.\n");
 	}
 }
 
@@ -128,16 +128,16 @@ void return_show(rent* return_head) {
 	rent* p = NULL; 
 	p = return_head->next;
 
-	printf("비디오를 반납을 완료한 가입자의 정보를 보여줍니다.\n");
+	printf("비디오를 반납을 완료한 회원의 정보를 보여줍니다.\n");
 	if (p->next == NULL) {
-		printf("비디오를 반납한 가입자가 존재하지 않습니다. 다시 시도해주세요.\n");
+		printf("비디오를 반납한 회원이 존재하지 않습니다. 다시 시도해주세요.\n");
 		return 0;
 	}
-	printf("*** 비디오를 반납한 가입자 id와 비디오 목록입니다. ***\n");
+	printf("*** 비디오를 반납한 회원 id와 비디오 목록입니다. ***\n");
 
-	//비디오를 반납한 가입자(들)를 보여주는 과정
+	//비디오를 반납한 회원(들)을 보여주는 과정
 	while (p->next != NULL) {
-		printf("가입자 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
+		printf("회원 id: %s, 비디오 제목: %s, 대여날짜: %s, 반납날짜: %s\n"
 			, p->user_id, p->video_title, p->rent_date, p->return_date);
 		p = p->next;
 	}

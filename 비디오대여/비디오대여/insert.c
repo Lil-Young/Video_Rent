@@ -7,18 +7,18 @@
 void user_insert(user* u_tail, user* u_head) {
 
 	//변수 선언
-	char id[10]; 
-	char name[10];
+	char id[1000]; 
+	char name[1000];
 
 	//포인터변수 선언 및 초기화
 	user* p = NULL; 
 	user* newNode = NULL; 
 	p = u_head->next;
 
-	printf("가입자를 추가합니다.\n");
-	printf("가입자 이름:"); 
+	printf("회원을 추가합니다.\n");
+	printf("회원 이름:"); 
 	scanf("%s", name); 
-	printf("가입자 id: "); 
+	printf("회원 id: "); 
 	scanf("%s", id);
 
 	//입력한 id가 중복되는지 확인하는 과정
@@ -45,7 +45,7 @@ void user_insert(user* u_tail, user* u_head) {
 	p->next = newNode; 
 	u_tail->prev = newNode;
 
-	printf("가입자 추가가 완료되었습니다.\n");
+	printf("회원 추가가 완료되었습니다.\n");
 	user_store(u_head); //user_store 함수를 호출하고 인자들을 전달한다.
 }
 
@@ -53,7 +53,7 @@ void user_insert(user* u_tail, user* u_head) {
 void video_insert(video* v_tail, video* v_head) {
 
 	//변수 선언
-	char title[30]; 
+	char title[1000];
 	int stock;
 
 	//포인터변수 선언 및 초기화
@@ -62,7 +62,8 @@ void video_insert(video* v_tail, video* v_head) {
 	p = v_head->next;
 
 	printf("비디오를 추가합니다.\n");
-	printf("비디오 제목: "); scanf("%s", title);
+	printf("비디오 제목: "); 
+	scanf("%s", title);
 
 	//입력한 title이 중복되는지 확인하는 과정
 	while (p->next != NULL) {
@@ -99,10 +100,10 @@ void video_insert(video* v_tail, video* v_head) {
 void rent_insert(rent* r_tail, video* v_head, user* u_head, rent* r_head) {
 
 	//변수 선언
-	char id[10]; 
-	char title[30]; 
-	char rent_d[10]; 
-	char return_d[10];
+	char id[1000];
+	char title[1000];
+	char rent_d[1000];
+	char return_d[1000];
 
 	//포인터변수 선언 및 초기화
 	rent* p = NULL; 
@@ -114,10 +115,11 @@ void rent_insert(rent* r_tail, video* v_head, user* u_head, rent* r_head) {
 	title_p = v_head->next; 
 	r_p = r_head->next;
 
-	printf("가입자가 비디오를 대여합니다.\n");
-	printf("본인의 id를 입력해주세요: "); scanf("%s", id);
+	printf("회원이 비디오를 대여합니다.\n");
+	printf("본인의 id를 입력해주세요: "); 
+	scanf("%s", id);
 
-	//빌리려는 가입자의 id가 있는지 확인하는 과정
+	//빌리려는 회원의 id가 있는지 확인하는 과정
 	while (id_p->next != NULL) {
 		if (strcmp(id_p->user_id, id) == 0) {
 			printf("id가 확인되었습니다.\n");
@@ -171,7 +173,10 @@ void rent_insert(rent* r_tail, video* v_head, user* u_head, rent* r_head) {
 	newNode->return_date = (char*)malloc(sizeof(char) * strlen(return_d) + 1);
 
 	//strcpy로 title에 있는 문자열을 newNode->video_title로 복사, id에 있는 문자열을 newNode->user_id로 복사, rent_d에 있는 문자열을 newNode->rent_date로 복사, return_d에 있는 문자열을 newNode->return_date로 복사
-	strcpy(newNode->video_title, title); strcpy(newNode->user_id, id); strcpy(newNode->rent_date, rent_d); strcpy(newNode->return_date, return_d);
+	strcpy(newNode->video_title, title); 
+	strcpy(newNode->user_id, id); 
+	strcpy(newNode->rent_date, rent_d); 
+	strcpy(newNode->return_date, return_d);
 
 	//newNode 연결
 	p = r_tail->prev; 
@@ -180,20 +185,6 @@ void rent_insert(rent* r_tail, video* v_head, user* u_head, rent* r_head) {
 	p->next = newNode; 
 	r_tail->prev = newNode;
 
-	printf("대여한 가입자의 정보 추가가 완료되었습니다.\n");
+	printf("대여한 회원의 정보 추가가 완료되었습니다.\n");
 	rent_store(r_head); //rent_store 함수를 호출하고 인자들을 전달한다.
-}
-
-//함수 return_insert를 void형으로 선언하고 매개변수(파라미터)로 전달된 인자를 받는다.
-void return_insert(rent* return_tail, rent* return_head, rent* val) {
-	rent* p = NULL; 
-	rent* new_p = NULL;
-	p = return_head->next;
-	printf("p의 주소값 : %d\n", val);
-	new_p = val;
-	printf("p의 주소값 : %d\n", new_p);
-	printf("dd");
-	p = return_tail->prev; new_p->next = p->next; new_p->prev = p; p->next = new_p; return_tail->prev = new_p; //newNode 연결
-	printf("반납을 완료한 가입자의 정보 추가가 완료되었습니다.\n");
-	return_store(return_head); //return_store 함수를 호출하고 인자들을 전달한다.
 }
