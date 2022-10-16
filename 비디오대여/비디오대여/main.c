@@ -63,7 +63,10 @@ int main(void) {
 			while (1) {
 				printf("수행할 기능을 입력해주세요: ");
 				scanf("%d", &func);
-				while (getchar() != '\n');
+				if (getchar() != '\n') {
+					printf("문자(열)을 입력했습니다. 프로그램을 종료합니다.");
+					return 0;
+				}				
 				if (func == 0) {
 					break;
 				}
@@ -91,7 +94,10 @@ int main(void) {
 			while (1) {
 				printf("수행할 기능을 입력해주세요: ");
 				scanf("%d", &func);
-				while (getchar() != '\n');
+				if (getchar() != '\n') {
+					printf("문자(열)을 입력했습니다. 프로그램을 종료합니다.");
+					return 0;
+				}
 				if (func == 0) {
 					break;
 				}
