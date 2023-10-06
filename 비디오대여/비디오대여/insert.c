@@ -79,6 +79,10 @@ void video_insert(video* v_tail, video* v_head) {
 		printf("문자열을 입력했습니다. 프로그램을 종료합니다. 다시 시도해주세요.");
 		exit(1);
 	}
+	if (stock <= 0) {
+		printf("재고는 0이상 입력해야됩니다.\n");
+		exit(1);
+	}
 	//newNode, newNode->video_title 메모리 할당
 	newNode = (video*)malloc(sizeof(video));
 	newNode->video_title = (char*)malloc(sizeof(char) * strlen(title) + 1);

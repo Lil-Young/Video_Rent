@@ -22,6 +22,7 @@ typedef struct Rent {
 	struct Rent* next;
 	struct Rent* prev;
 }rent;
+
 //삽입(추가) 기능
 void user_insert(user* u_tail, user* u_head); //회원을 추가한다.
 void video_insert(video* v_tail, video* v_head); //비디오를 추가한다.
